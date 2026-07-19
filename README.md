@@ -11,6 +11,7 @@ En este proyecto se documenta paso a paso la creación y configuración de una o
 3. [Creación de la cuenta aws-production](#3-creación-de-la-cuenta-aws-production)
 4. [Activación del acceso de IAM a la facturación](#4-activación-del-acceso-de-iam-a-la-facturación)
 5. [Activación de MFA](#5-activación-de-mfa)
+6. [Creación de los usuarios administradores](#6-creación-de-los-usuarios-administradores)
 
 ---
 
@@ -63,3 +64,12 @@ De esta forma, aunque una contraseña se vea comprometida, un atacante no podrí
 Una vez configurado, AWS confirma que el dispositivo MFA ha quedado asignado:
 
 ![Dispositivo MFA asignado](capturas/mfa-dispositivo-asignado.png)
+
+## 6. Creación de los usuarios administradores
+
+En cada cuenta se crean el usuario o usuarios administradores necesarios desde **IAM → Usuarios → Crear usuario**, adjuntándoles la política administrada de AWS **`AdministratorAccess`**, que concede acceso completo a todos los servicios y recursos de la cuenta.
+
+Estos usuarios administradores son los que se utilizan para la operativa diaria, siguiendo las mismas buenas prácticas ya aplicadas:
+
+- Activar **MFA** en cada usuario administrador.
+- No usar el usuario root salvo para tareas que lo requieran estrictamente.
