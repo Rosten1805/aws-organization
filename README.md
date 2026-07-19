@@ -73,3 +73,7 @@ Estos usuarios administradores son los que se utilizan para la operativa diaria,
 
 - Activar **MFA** en cada usuario administrador.
 - No usar el usuario root salvo para tareas que lo requieran estrictamente.
+
+En este caso, la política `AdministratorAccess` se asigna a través de **grupos** (*Administrators* y *Developers*), lo que facilita gestionar los permisos de varios usuarios a la vez:
+
+![Política AdministratorAccess adjunta al usuario](capturas/permisos-administratoraccess.png)
