@@ -9,6 +9,7 @@ En este proyecto se documenta paso a paso la creación y configuración de una o
 1. [Protección de la cuenta root](#1-protección-de-la-cuenta-root)
 2. [Creación del usuario administrador (aws-admin)](#2-creación-del-usuario-administrador-aws-admin)
 3. [Creación de la cuenta aws-production](#3-creación-de-la-cuenta-aws-production)
+4. [Activación del acceso de IAM a la facturación](#4-activación-del-acceso-de-iam-a-la-facturación)
 
 ---
 
@@ -41,3 +42,13 @@ Por ejemplo: `micorreo+production@gmail.com`. Gmail entrega todos los mensajes a
 En el formulario de registro se introduce el correo con el alias `+production` y como nombre de cuenta **`aws-prod`**:
 
 ![Registro de la cuenta aws-production](capturas/registro-cuenta-aws-production.png)
+
+## 4. Activación del acceso de IAM a la facturación
+
+Por defecto, los usuarios y roles de IAM **no pueden ver la información de facturación** de la cuenta, aunque tengan permisos de administrador: es una opción que solo puede activar el usuario root.
+
+Para que el usuario `aws-admin` pueda consultar la facturación sin necesidad de usar root, se inicia sesión con la cuenta **root** y se activa la opción **"Acceso de usuario de IAM y rol a información de facturación"** (*IAM user and role access to Billing information*), disponible en la configuración de la cuenta (**Account → Configuración de la cuenta**).
+
+Una vez activada, la opción aparece con el estado **Activado**:
+
+![Acceso de IAM a la información de facturación activado](capturas/acceso-iam-facturacion-activado.png)
