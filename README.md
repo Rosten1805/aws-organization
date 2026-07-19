@@ -10,6 +10,7 @@ En este proyecto se documenta paso a paso la creación y configuración de una o
 2. [Creación del usuario administrador (aws-admin)](#2-creación-del-usuario-administrador-aws-admin)
 3. [Creación de la cuenta aws-production](#3-creación-de-la-cuenta-aws-production)
 4. [Activación del acceso de IAM a la facturación](#4-activación-del-acceso-de-iam-a-la-facturación)
+5. [Activación de MFA](#5-activación-de-mfa)
 
 ---
 
@@ -52,3 +53,13 @@ Para que el usuario `aws-admin` pueda consultar la facturación sin necesidad de
 Una vez activada, la opción aparece con el estado **Activado**:
 
 ![Acceso de IAM a la información de facturación activado](capturas/acceso-iam-facturacion-activado.png)
+
+## 5. Activación de MFA
+
+Como norma de seguridad, se activa **siempre la autenticación multifactor (MFA)** en todas las cuentas, tanto en el usuario **root** como en los usuarios **IAM**.
+
+De esta forma, aunque una contraseña se vea comprometida, un atacante no podría acceder a la cuenta sin el segundo factor (aplicación de autenticación, llave de seguridad, etc.). AWS permite registrar hasta 8 dispositivos MFA por usuario.
+
+Una vez configurado, AWS confirma que el dispositivo MFA ha quedado asignado:
+
+![Dispositivo MFA asignado](capturas/mfa-dispositivo-asignado.png)
